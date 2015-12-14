@@ -1,0 +1,26 @@
+<h3>Contact Us</h3>
+
+<form name = "myForm" ng-submit="vm.addContact(Contact)">
+  <input name="name" placeholder="Name"  ng-model="Contact.name" required>
+
+    <span class="error" ng-show="myForm.name.$error.required">{{ vm.messagename }}</span>
+    <span class="valid" ng-show="myForm.name.$valid">{{ vm.messagenameOK }}</span>
+
+  <input name = "email" type = "email" placeholder="Email" ng-model="Contact.email" required>
+
+    <span class="error" ng-show="myForm.email.$error.required">{{ vm.messageemailOne }}</span>
+    <span class="error" ng-show="myForm.email.$error.email">{{ vm.messageemailTwo }}</span>
+    <span class="valid" ng-show="myForm.email.$valid">{{ vm.messageemailOK }}</span>
+
+  <input name = "web" type = "url" placeholder="Website" ng-model="Contact.website" required>
+    <span class="error" ng-show="myForm.web.$error.required">{{ vm.messagewebOne }}</span>
+    <span class="error" ng-show="myForm.web.$error.url">{{ vm.messagewebTwo }}</span>
+    <span class="valid" ng-show="myForm.web.$valid">{{ vm.messagewebOK }}</span>
+  
+
+  <input name = "message"placeholder="Message" ng-model="Contact.message" required>
+    <span class="error" ng-show="myForm.message.$error.required">{{ vm.messagemessageOne }}</span>
+    <span class="valid" ng-show="myForm.message.$valid">{{ vm.messagemessageOK }}</span>
+  <button ng-click = "incrementByOne()">Submit</button>
+    <p ng-click = "incrementByOne()"> {{ vm.message }}</p>
+</form>
